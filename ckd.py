@@ -3,7 +3,11 @@ import joblib
 import numpy as np
 
 # Load trained model
-model = joblib.load(r"C:\Users\ashme\ckd\ckd_best_model.pkl")
+import os
+# get path relative to this file
+model_path = os.path.join(os.path.dirname(__file__), "ckd_best_model.pkl")
+model = joblib.load(model_path)
+
 
 st.set_page_config(page_title="CKD Prediction App", page_icon="🩺", layout="wide")
 
